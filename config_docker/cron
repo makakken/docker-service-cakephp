@@ -1,0 +1,2 @@
+#!/bin/sh
+su -s /bin/sh nobody -c '/var/www/html/bin/cake version >> /var/log/myjob.log 2>&1'

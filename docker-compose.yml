@@ -1,0 +1,41 @@
+version: "3"
+services:
+  cake-web:
+    build: .
+    ports:
+      - "4000:80"
+    networks:
+      - cake-net
+    environment:
+      - SECURITY_SALT=ashjg2op97sas97139971398ashkoP21
+      - MYSQL_URL=cake-db
+      - MYSQL_USERNAME=cakeapp
+      - MYSQL_DATABASE=cake
+      - MYSQL_PASSWORD=tGYYdGmsekretlMa
+    depends_on:
+      - cake-db
+    volumes:
+      - ./cake-app/config:/var/www/html/config
+      - ./cake-app/src:/var/www/html/src
+      - ./cake-app/plugins:/var/www/html/plugins
+      - ./cake-app/tests:/var/www/html/tests
+      - ./cake-app/webroot:/var/www/html/webroot
+
+
+  cake-db:
+    image: mysql/mysql-server:5.7
+    volumes:
+      - cake-db-data:/var/lib/mysql
+    networks:
+      - cake-net
+    environment:
+      - MYSQL_USER=cakeapp
+      - MYSQL_PASSWORD=tGYYdGmsekretlMa
+      - MYSQL_ROOT_PASSWORD=tasdfdGmsekretlMasfa
+      - MYSQL_DATABASE=cake
+
+networks:
+  cake-net:
+
+volumes:
+  cake-db-data:
