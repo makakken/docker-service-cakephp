@@ -198,4 +198,4 @@ Type::build('timestamp')
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 
-Plugin::load('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
+//Plugin::load('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
