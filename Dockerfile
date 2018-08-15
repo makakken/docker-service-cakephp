@@ -33,6 +33,9 @@ RUN chmod -R 755 /var/www/html/logs
 RUN chown -R nobody:nogroup /var/www/html/tmp
 RUN chown -R nobody:nogroup /var/www/html/logs
 
+# Install Additional Composer packages
+# RUN composer require cakedc/users
+
 EXPOSE 80 443
 
 WORKDIR /var/log
